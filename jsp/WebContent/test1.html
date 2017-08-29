@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+
+function test(btnObj)
+{
+	alert(btnObj.value);
+}
+
+var TestObj = function()
+{
+	this.a=3;
+	this.b=4;
+	var c = 10;
+	this.alertStr = function(str)
+	{
+		alert(c);
+	}
+}
+
+var to = new TestObj();
+to.alertStr();
+
+</script>
+<body>
+<input type="text" name="id" id="id" value="테스트"><br>
+<input type="text" name="pwd" id="pwd" value="비밀번호"><br>
+<input type="text" name="age" id="age" value="나이"><br>
+<input type="text" name="name" id="name" value="이름"><br>
+<input type="button" value="테스트11" onclick="test(this)"><br>
+</body>
+</html>
