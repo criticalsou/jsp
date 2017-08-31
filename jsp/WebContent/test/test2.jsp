@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-얘는 왼쪽 애입니다.
-<%
-String leftStr = "left";
-%>
+test2.jsp파일입니다.
 </body>
 </html>

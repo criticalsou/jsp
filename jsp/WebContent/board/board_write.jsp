@@ -7,25 +7,25 @@
 <title>게시판 작성</title>
 </head>
 <body>
- <form action="write.board" method="post">
- 	<table>
- 		<tr>
- 			<td>제목</td>
- 			<td><input type="text" name="title" id="title"></td>
- 		</tr>
- 		<tr>
- 			<td>내용</td>
- 			<td><textarea name="content" id="content"></textarea></td>
- 		</tr>
- 		<tr>
- 			<td>작성자</td>
- 			<td><input type="text" name="writer" id="writer"></td>
- 		</tr>
- 		<tr>
- 			<td colspan="2"><input type="submit" value="게시글 올리기"></td>
- 		</tr>
- 	</table>
- 	<input type="hidden" name="command" value="write">
- 	</form>
+<form action="write.board" method="post">
+	<table>
+		<tr>
+			<td>제목</td>
+			<td><input type="text" name="title" id="title"></td>
+		</tr>
+		<tr>
+			<td>내용</td>
+			<td><textarea name="content" id="content"></textarea></td>
+		</tr>
+		<tr>
+			<td>작성자</td>
+			<td><input type="text" name="writer" id="writer"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="게시글 올리기"></td>
+		</tr>
+	</table>
+	<input type="hidden" name="command" value="write">
+</form>
 </body>
 </html>

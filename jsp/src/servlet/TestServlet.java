@@ -9,52 +9,42 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class TestServlet extends HttpServlet{
+public class TestServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
-	
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException
-		{
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 			request.setCharacterEncoding("utf-8");
 			String id = request.getParameter("id");
 			System.out.println(id);
 			response.setCharacterEncoding("utf-8");
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter pw = response.getWriter();
-			pw.println("입력하신 ID :"+id);
-		}
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException{
+			pw.println("입력하신 ID : " + id);
+	} 
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-//		String id = request.getParameter("id");
-//		System.out.println(id);
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		String result = "";
-		if(id.equals("aaa"))
-		{
-			if(pwd.equals("aaa"))
-			{
+		if(id.equals("redfila")||id.equals("red")||id.equals("blue")||id.equals("black")){
+			if(pwd.equals("red")) {
 				HttpSession session = request.getSession();
 				session.setAttribute("id", id);
-				result="정상적으로 로그인 되었습니다.";
-			}
-			else
-			{
+				result = "정상적으로 로그인 되었습니다.";
+			}else {
 				result = "비밀번호가 틀렸습니다.";
 			}
+		}else {
+			result = "없는 아이디 입니다.";
 		}
-		else
-		{
-			result = "없는 아이디입니다.";
-		}
-		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		pw.println(result);
-		
-	}
 
+	}
 }

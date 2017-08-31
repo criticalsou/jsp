@@ -29,6 +29,4 @@
     	<servlet-name>UserServlet</servlet-name>
     	<url-pattern>*.user</url-pattern>
     </servlet-mapping>
-    
 </web-app>
- 

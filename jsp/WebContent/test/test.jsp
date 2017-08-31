@@ -7,9 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-얘는 왼쪽 애입니다.
+test.jsp파일입니다.
 <%
-String leftStr = "left";
+//asdfasdf
+/*
+asdfsadfsdf
+asdf
+asdf
+*/
+response.sendRedirect("test2.jsp");
 %>
 </body>
 </html>

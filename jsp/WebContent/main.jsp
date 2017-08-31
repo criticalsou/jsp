@@ -10,30 +10,29 @@
 </head>
 <body>
 <%
-if(session.getAttribute("user")!=null)
-{
-	Map<String, String> user = (Map)session.getAttribute("user");
+if(session.getAttribute("user")!=null){
+	Map<String, String> user = (Map) session.getAttribute("user");
 	String id = user.get("id");
 	String name = user.get("name");
 	String user_no = user.get("user_no");
 	String hobby = user.get("hobby");
 	String admin = user.get("admin");
 %>
-<%=user_no%>번째로 가입하신<br>
-<%=id%>님 반갑습니다<br>
-<%=name%> 이란 이름이 멋지군요<br>
-<%=name%>의 취미는 <%=hobby %>입니다.
-<form action="logout.user" method="post" id="btnForm">
+<%=user_no %>번째로 가입하신<br>
+<%=id %>님 반갑습니다.<br>
+<%=name %>이란 이름이 멋지시군요.<br>
+<%=name %>의 취미는 <%=hobby %> 들이시군요.
+<form action="logout.user" method="post" id="btnForm" >
 <input type="button" value="로그아웃" data-url="/logout.user">
-<input type="button" value="회원수정" data-url="/modify.jsp"> 
-<input type="button" value="회원탈퇴" data-url="/delete.user"> 
+<input type="button" value="회원수정" data-url="/modify.jsp">
+<input type="button" value="회원탈퇴" data-url="/delete.user">
 <%
-	if(admin.equals("1")){
+if(admin.equals("1")){
 %>
 <input type="button" value="회원리스트" data-url="/list.jsp">
 <input type="button" value="회원리스트(옛방식)" data-url="/list.user">
 <%
-	}
+}
 %>
 <input type="hidden" name="command" id="command" value="logout">
 </form>
@@ -44,7 +43,7 @@ $("input").click(function(){
 		$("#command").val(url.split(".")[0].replace("/",""));
 		this.form.submit();
 	}else{
-		location.href=url;
+		location.href=url + "?userNo=<%=user_no %>";
 	}
 })
 /*
@@ -55,18 +54,13 @@ function move(obj){
 	}else if(obj.value=="회원탈퇴"){
 		document.getElementById("command").value="delete";
 	}
-	
 	obj.form.submit();
 }
 */
 </script>
 <%
-}
-else
-{
+}else{
 	response.sendRedirect("/login.jsp");
-	
-
 }
 %>
 </body>
